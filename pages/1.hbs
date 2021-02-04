@@ -18,14 +18,12 @@
               <dt>
                 <a class="nav__link" href="./index2.html">Список записей</a>
               </dt>
-
               <dt>
                 <a class="nav__link" href="./index4.html">Обратная связь</a>
               </dt>
             </dl>
           </nav>
         </div>
-
         <div class="header__right">
           <nav class="nav">
             <dl class="nav__list">
@@ -90,36 +88,10 @@
           <button class="btn btn--blue" type="button">Написать мне</button>
         </div>
       </aside>
-
-      <main class="main">
-        <h1 class="tittle__main">Обратная связь</h1>
-        <div class="container">
-          <form name="form" method="post" class="form-feedback">
-            <h2>Форма обратной связи.</h2>
-            <div class="form-feedback_titles">Ваше имя*</div>
-            <input class="form-feedback_input" name="name" type="text" />
-
-            <div class="form-feedback_titles">Электронная почта*</div>
-            <input class="form-feedback_input" name="email" type="text" />
-
-            <div class="form-feedback_titles">Тема сообщения</div>
-            <input class="form-feedback_input" name="subjects" type="text" />
-
-            <div class="form-feedback_titles">Текст сообщения:</div>
-            <textarea
-              class="form-feedback_textarea"
-              name="post-text"
-              placeholder="Напишите что-нибудь"
-            ></textarea>
-
-            <input
-              class="form-feedback_submit"
-              value="Отправить"
-              type="submit"
-            />
-          </form>
-        </div>
-      </main>
+{{> parts/main}}
+{{> parts/main-2}}
+{{> parts/main-3}}
+{{> parts/main-4}}
     </div>
   </body>
 </html>

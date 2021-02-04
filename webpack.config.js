@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const HandlebarsPlugin = require("handlebars-webpack-plugin");
 
 module.exports = {
   devtool: "source-map",
@@ -45,22 +46,6 @@ module.exports = {
     port: 9000,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/index.html",
-    }),
-    new HtmlWebpackPlugin({
-      filename: "index2.html",
-      template: "./src/index2.html",
-    }),
-    new HtmlWebpackPlugin({
-      filename: "index3.html",
-      template: "./src/index3.html",
-    }),
-    new HtmlWebpackPlugin({
-      filename: "index4.html",
-      template: "./src/index4.html",
-    }),
     new MiniCssExtractPlugin({
       filename: "./style.css",
     }),
@@ -71,6 +56,16 @@ module.exports = {
           to: "dest",
         },
       ],
+    }),
+    new HandlebarsPlugin({
+      entry: path.join(process.cwd(), "pages", "1.hbs"),
+      output: path.join(process.cwd(), "dist", "index.html"),
+      partials: [path.join(process.cwd(), "partials", "**", "main.hbs")],
+    }),
+    new HandlebarsPlugin({
+      entry: path.join(process.cwd(), "pages", "1.hbs"),
+      output: path.join(process.cwd(), "dist", "index2.html"),
+      partials: [path.join(process.cwd(), "partials", "**", "main-2.hbs")],
     }),
   ],
 };
