@@ -8,12 +8,12 @@
   width: 400px;
 }
 
-.form-feedback_titles {
+.form-feedback__titles {
   margin-bottom: 2rem;
   font-size: 1.4rem;
 }
 
-.form-feedback_textarea {
+.form-feedback__textarea {
   background: transparent;
   font-family: inherit;
   height: 60px;
@@ -23,7 +23,7 @@
   border-radius: 5px;
 }
 
-.form-feedback_input {
+.form-feedback__input {
   font-family: inherit;
   padding: 1.2rem 2rem;
   color: $white;
@@ -33,7 +33,7 @@
   border: solid 2px #3f3e3e;
 }
 
-.form-feedback_submit {
+.form-feedback__submit {
   margin-top: 1rem;
   display: block;
   background: $white;

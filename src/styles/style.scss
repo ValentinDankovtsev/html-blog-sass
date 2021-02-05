@@ -1,15 +1,13 @@
 @import "vars";
 html {
-  font-size: 62.5%;
+  font-size: 10px;
 }
 body {
   background: $primiry;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: $white;
-  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Roboto Condensed", sans-serif;
 }
 @import "page";
 @import "header";

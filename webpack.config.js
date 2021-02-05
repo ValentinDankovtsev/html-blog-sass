@@ -1,11 +1,9 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const HandlebarsPlugin = require("handlebars-webpack-plugin");
 
 module.exports = {
-  devtool: "source-map",
   entry: {
     index: ["./src/main.js"],
   },
@@ -46,9 +44,6 @@ module.exports = {
     port: 9000,
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "./style.css",
-    }),
     new CopyPlugin({
       patterns: [
         {
@@ -57,15 +52,38 @@ module.exports = {
         },
       ],
     }),
+
     new HandlebarsPlugin({
-      entry: path.join(process.cwd(), "pages", "1.hbs"),
-      output: path.join(process.cwd(), "dist", "index.html"),
-      partials: [path.join(process.cwd(), "partials", "**", "main.hbs")],
+      entry: path.join(process.cwd(), "pages", "general.hbs"),
+      output: path.join(process.cwd(), "dist", "blog_page.html"),
+      partials: [
+        path.join(process.cwd(), "partials", "blog_page", "*", "main.hbs"),
+      ],
+      inject: "index",
     }),
     new HandlebarsPlugin({
-      entry: path.join(process.cwd(), "pages", "1.hbs"),
-      output: path.join(process.cwd(), "dist", "index2.html"),
-      partials: [path.join(process.cwd(), "partials", "**", "main-2.hbs")],
+      entry: path.join(process.cwd(), "pages", "general.hbs"),
+      output: path.join(process.cwd(), "dist", "notes_page.html"),
+      partials: [
+        path.join(process.cwd(), "partials", "notes_page", "*", "main.hbs"),
+      ],
+    }),
+    new HandlebarsPlugin({
+      entry: path.join(process.cwd(), "pages", "general.hbs"),
+      output: path.join(process.cwd(), "dist", "post_page.html"),
+      partials: [
+        path.join(process.cwd(), "partials", "post_page", "*", "main.hbs"),
+      ],
+    }),
+    new HandlebarsPlugin({
+      entry: path.join(process.cwd(), "pages", "general.hbs"),
+      output: path.join(process.cwd(), "dist", "feedback_page.html"),
+      partials: [
+        path.join(process.cwd(), "partials", "feedback_page", "*", "main.hbs"),
+      ],
+    }),
+    new MiniCssExtractPlugin({
+      filename: "./style.css",
     }),
   ],
 };

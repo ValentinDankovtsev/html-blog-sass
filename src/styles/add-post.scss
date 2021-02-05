@@ -27,8 +27,8 @@
   display: flex;
   justify-content: flex-end;
 }
-.add-post__file,
-.add-post__send {
+
+@mixin send-post-mix {
   display: block;
   width: 4.4rem;
   height: 4.4rem;
@@ -37,15 +37,18 @@
   cursor: pointer;
 
   input {
-    display: none;
+    opacity: 0;
   }
 }
 
 .add-post__file {
   background-color: #ebebeb;
+  @include send-post-mix;
 }
+
 .add-post__send {
   background-color: $secondary;
   margin-left: 1rem;
   width: 4rem;
+  @include send-post-mix;
 }

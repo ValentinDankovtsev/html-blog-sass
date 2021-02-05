@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -13,18 +19,19 @@
           <nav class="nav">
             <dl class="nav__list">
               <dt>
-                <a class="nav__link" href="./index.html">Главная</a>
+                <a class="nav__link" href="./blog_page.html">Главная</a>
               </dt>
               <dt>
-                <a class="nav__link" href="./index2.html">Список записей</a>
+                <a class="nav__link" href="./notes_page.html">Список записей</a>
               </dt>
               <dt>
-                <a class="nav__link" href="./index4.html">Обратная связь</a>
+                <a class="nav__link" href="./feedback_page.html"
+                  >Обратная связь</a
+                >
               </dt>
             </dl>
           </nav>
         </div>
-
         <div class="header__right">
           <nav class="nav">
             <dl class="nav__list">
@@ -81,15 +88,14 @@
               </p>
             </div>
           </div>
-          <!--./profile-->
         </div>
-        <!--./sidebar__content-->
         <div class="sidebar__footer">
           <a class="btn btn--red" href="#">Мои работы</a>
           <button class="btn btn--blue" type="button">Написать мне</button>
         </div>
       </aside>
 
+      {{> parts/main}}
     </div>
   </body>
 </html>
