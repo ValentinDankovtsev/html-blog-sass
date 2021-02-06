@@ -1,7 +1,9 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const HandlebarsPlugin = require("handlebars-webpack-plugin");
+const glob = require("glob");
+const pages = glob.sync("pages/*.html");
 
 module.exports = {
   entry: {
@@ -52,38 +54,16 @@ module.exports = {
         },
       ],
     }),
-
-    new HandlebarsPlugin({
-      entry: path.join(process.cwd(), "pages", "general.hbs"),
-      output: path.join(process.cwd(), "dist", "blog_page.html"),
-      partials: [
-        path.join(process.cwd(), "partials", "blog_page", "*", "main.hbs"),
-      ],
-      inject: "index",
-    }),
-    new HandlebarsPlugin({
-      entry: path.join(process.cwd(), "pages", "general.hbs"),
-      output: path.join(process.cwd(), "dist", "notes_page.html"),
-      partials: [
-        path.join(process.cwd(), "partials", "notes_page", "*", "main.hbs"),
-      ],
-    }),
-    new HandlebarsPlugin({
-      entry: path.join(process.cwd(), "pages", "general.hbs"),
-      output: path.join(process.cwd(), "dist", "post_page.html"),
-      partials: [
-        path.join(process.cwd(), "partials", "post_page", "*", "main.hbs"),
-      ],
-    }),
-    new HandlebarsPlugin({
-      entry: path.join(process.cwd(), "pages", "general.hbs"),
-      output: path.join(process.cwd(), "dist", "feedback_page.html"),
-      partials: [
-        path.join(process.cwd(), "partials", "feedback_page", "*", "main.hbs"),
-      ],
-    }),
     new MiniCssExtractPlugin({
       filename: "./style.css",
     }),
+    ...pages.map(
+      (el) =>
+        new HtmlWebpackPlugin({
+          filename: el.replace(/^pages\//, ""),
+          template: el,
+          minify: false,
+        })
+    ),
   ],
 };
