@@ -44,6 +44,8 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 9000,
+    open: true,
+    openPage: "blog_page.html",
   },
   plugins: [
     new CopyPlugin({
