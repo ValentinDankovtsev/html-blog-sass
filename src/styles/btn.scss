@@ -10,17 +10,17 @@
   font-size: 1.2rem;
   line-height: 1.1;
   font-weight: 500;
-  color: $white;
+  color: #f6f4f4;
   text-decoration: none;
   transition: background-color 0.2s linear;
 }
 .btn {
   @include button;
   &--red {
-    background-color: $red;
-    box-shadow: 0 7px 17px -10px rgba($red, 0.3);
+    background-color: #c7160b;
+    box-shadow: 0 7px 17px -10px rgba(#c7160b, 0.3);
     &:hover {
-      background-color: darken($red, 10%);
+      background-color: darken(#c7160b, 10%);
     }
   }
 
