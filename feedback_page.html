@@ -6,15 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="user add feedback" />
     <title>Feedback_page</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7DQk6YvM.woff2"
+      as="font"
+      crossorigin
     />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19a7DQk6YvNkeg.woff2"
+      as="font"
+      crossorigin
+    />
+    <style>
+      @font-face {
+        font-family: "Roboto Condensed";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19K7DQk6YvM.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Roboto Condensed";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-19a7DQk6YvNkeg.woff2)
+          format("woff2");
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+    </style>
+    <style>
+      html {
+        font-size: 10px;
+      }
+      body {
+        background: #202020;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #fff;
+        font-family: "Roboto Condensed", sans-serif;
+      }
+    </style>
   <link href="./style.css" rel="stylesheet"></head>
   <body>
     <div class="page">
-      <header class="header"> <div class="header__left"> <nav class="nav"> <ul class="nav__list"> <li> <a class="nav__link" href="./blog_page.html">Главная</a> </li> <li> <a class="nav__link" href="./notes_page.html">Список записей</a> </li> <li> <a class="nav__link" href="./feedback_page.html">Обратная связь</a> </li> </ul> </nav> </div> <div class="header__right"> <nav class="nav"> <ul class="nav__list"> <li> <a class="nav__link" href="#">Профиль</a> </li> <li> <a class="nav__link" href="#">Выйти</a> </li> </ul> </nav> <form class="search" action="/" method="post"> <input class="search__input" type="text" placeholder="Поиск по блогу" aria-label="Search"/> </form> </div> </header> <aside class="sidebar"> <div class="sidebar__header"> <img src="dest/Rectangle.jpg" alt=""/> </div> <div class="sidebar__content"> <div class="profile"> <img class="profile__avatar" src="dest/bear.svg" alt=""/> <div class="profile__name">Дядя Миша</div> <div class="profile__prof">блог html-верстальщика</div> <ul class="social"> <li class="social__item"> <a class="social__link" href="#" target="_blank"> <img src="dest/instagram.svg" alt=""/> </a> </li> <li class="social__item"> <a class="social__link" href="#" target="_blank"> <img src="dest/vk.svg" alt=" вк"/> </a> </li> <li class="social__item"> <a class="social__link" href="#" target="_blank"> <img src="dest/pinterest.svg" alt=" вк"/> </a> </li> </ul> <div class="profile__text"> <p> Практика верстки сайтов. Изучаю верстку с 2020 года. Цель научиться создавать сайты различной сложности. </p> </div> </div> </div> <div class="sidebar__footer"> <a class="btn btn--red" href="#">Мои работы</a> <button class="btn btn--blue" type="button">Написать мне</button> </div> </aside> 
+      <header class="header"> <div class="header__left"> <nav class="nav"> <ul class="nav__list"> <li> <a class="nav__link" href="./blog_page.html">Главная</a> </li> <li> <a class="nav__link" href="./notes_page.html">Список записей</a> </li> <li> <a class="nav__link" href="./feedback_page.html">Обратная связь</a> </li> </ul> </nav> <a class="burger" href="#" id="sidebarToggle"> <span></span> </a> </div> <div class="header__right"> <nav class="nav"> <ul class="nav__list"> <li> <a class="nav__link" href="#">Профиль</a> </li> <li> <a class="nav__link" href="#">Выйти</a> </li> </ul> </nav> <form class="search" action="/" method="post"> <input class="search__input" type="text" placeholder="Поиск по блогу" aria-label="Search"/> </form> </div> </header> <aside class="sidebar" id="sidebar"> <div class="sidebar__header"> <img src="dest/Rectangle.jpg" alt=""/> </div> <div class="sidebar__content"> <div class="profile"> <img class="profile__avatar" src="dest/bear.svg" alt=""/> <div class="profile__header"> <div class="profile__name">Дядя Миша</div> <div class="profile__prof">блог html-верстальщика</div> <div class="profile__text"> <p> Практика верстки сайтов. Изучаю верстку с 2020 года. Цель научиться создавать сайты различной сложности. </p> </div> </div> <nav class="nav nav--mobile"> <ul class="nav__list"> <li> <a class="nav__link" href="./blog_page.html">Главная</a> </li> <li> <a class="nav__link" href="./notes_page.html">Список записей</a> </li> <li> <a class="nav__link" href="./feedback_page.html">Обратная связь</a> </li> <li> <a class="nav__link" href="#">Профиль</a> </li> <li> <a class="nav__link" href="#">Выйти</a> </li> </ul> </nav> <ul class="social"> <li class="social__item"> <a class="social__link" href="#" target="_blank"> <img src="dest/instagram.svg" alt=""/> </a> </li> <li class="social__item"> <a class="social__link" href="#" target="_blank"> <img src="dest/vk.svg" alt=" вк"/> </a> </li> <li class="social__item"> <a class="social__link" href="#" target="_blank"> <img src="dest/pinterest.svg" alt=" вк"/> </a> </li> </ul> </div> </div> <div class="sidebar__footer"> <a class="btn btn--red" href="#">Мои работы</a> <a class="btn btn--blue" href="#">Написать мне</a> </div> </aside> 
       <main class="main"> <h1 class="main__title">Обратная связь</h1> <div class="container"> <form name="form" method="post" class="form-feedback"> <h2>Форма обратной связи.</h2> <div class="form-feedback__titles">Ваше имя*</div> <input class="form-feedback__input" name="name" type="text" aria-label="input-name"/> <div class="form-feedback__titles">Электронная почта*</div> <input class="form-feedback__input" name="email" type="text" aria-label="input-email"/> <div class="form-feedback__titles">Тема сообщения</div> <input class="form-feedback__input" name="subjects" type="text" aria-label="input-message"/> <div class="form-feedback__titles">Текст сообщения:</div> <textarea class="form-feedback__textarea" name="post-text" placeholder="Напишите что-нибудь" aria-label="input-text"></textarea> <input class="form-feedback__submit" value="Отправить" type="submit"/> </form> </div> </main> 
     </div>
   <script src="index_bundle.js"></script></body>
