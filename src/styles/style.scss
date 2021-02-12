@@ -1,16 +1,8 @@
 @import "vars";
-html {
-  font-size: 10px;
-}
-body {
-  background: $primiry;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: $white;
-  font-family: "Roboto Condensed", sans-serif;
-}
+@import "mixins";
 @import "page";
 @import "header";
+@import "burger";
 @import "nav";
 @import "search";
 @import "sidebar";

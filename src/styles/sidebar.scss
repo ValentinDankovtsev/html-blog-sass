@@ -8,22 +8,44 @@
   z-index: $z-index-sidebar;
   background-color: $primiry;
   box-shadow: 5px 0 15px rgba(#050505, 0.1);
+
+  @include breakpoint($tablet-bp) {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 4rem);
+    overflow: auto;
+    top: 4rem;
+    transform: translateX(-100%);
+    transition: transform 0.2s linear;
+    .show-sidebar & {
+      transform: translateX(0);
+    }
+  }
 }
 
 .sidebar__header {
-  height: 180px;
+  height: 18rem;
   background-color: $secondary;
 
   @include post-img;
+
+  @include breakpoint($tablet-bp) {
+    height: 10rem;
+  }
 }
 
 .sidebar__content {
   padding: 0 2rem;
-  margin-top: -5rem;
+  @include breakpoint($tablet-bp) {
+    flex-grow: 1;
+  }
 }
 
 .sidebar__footer {
   display: flex;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  @include breakpoint($tablet-bp) {
+    padding-bottom: 2rem;
+  }
 }

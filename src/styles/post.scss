@@ -4,6 +4,10 @@
   background-color: $primiry;
   box-shadow: 0 15px 25px rgba($black, 0.35);
   border-radius: 5px;
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
 }
 @mixin post-img {
   img {
@@ -49,7 +53,11 @@
   margin: 0 0 2.5rem;
   @include post-img;
 }
-
+.post__footer {
+  @include breakpoint($tablet-bp) {
+    text-align: left;
+  }
+}
 .post__actions {
   display: flex;
   justify-content: space-between;

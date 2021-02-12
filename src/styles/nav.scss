@@ -1,6 +1,24 @@
+.nav {
+  &--mobile {
+    display: none;
+    margin: 3rem 0;
+  }
+  @include breakpoint($tablet-bp) {
+    display: none;
+    &--mobile {
+      display: block;
+    }
+  }
+}
+
 .nav__list {
   list-style-type: none;
   display: flex;
+
+  @include breakpoint($tablet-bp) {
+    flex-direction: column;
+    margin-left: -5rem;
+  }
 }
 
 .nav__link {
@@ -14,5 +32,11 @@
   transition: background-color 0.2s linear;
   &:hover {
     background-color: $blue;
+  }
+  @include breakpoint($tablet-bp) {
+    padding: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.6rem;
   }
 }

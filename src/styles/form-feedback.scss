@@ -1,11 +1,13 @@
 .form-feedback {
-  margin: auto;
-  margin-bottom: 3rem;
   padding: 2rem;
+  margin-bottom: 3rem;
   background-color: $primiry;
   box-shadow: 0 15px 25px rgba($black, 0.35);
   border-radius: 5px;
-  width: 400px;
+
+  @include breakpoint($mobile-bp) {
+    padding-right: 1.5rem;
+  }
 }
 
 .form-feedback__titles {
@@ -17,7 +19,7 @@
   background: transparent;
   font-family: inherit;
   height: 60px;
-  width: 395px;
+  width: 100%;
   resize: none;
   color: $white;
   border-radius: 5px;

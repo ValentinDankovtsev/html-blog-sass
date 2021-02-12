@@ -4,8 +4,18 @@
   background-color: $primiry;
   box-shadow: 0 15px 25px rgba($black, 0.35);
   border-radius: 5px;
+  @include breakpoint($mobile-bp) {
+    padding-right: 2rem;
+  }
 }
-
+.materials__list {
+  padding-left: 1rem;
+  margin-top: -1.5rem;
+}
+.materials__text {
+  font-size: 1.4rem;
+  color: #d2d2d2;
+}
 .materials__article {
   border-bottom: 2px solid #1c1c1c;
   margin-bottom: 2rem;
@@ -19,6 +29,6 @@
 }
 
 .materials__data {
-  margin-left: 50rem;
+  float: right;
   font-size: 1.2rem;
 }
