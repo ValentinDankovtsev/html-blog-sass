@@ -1,2 +1,3 @@
 import "./styles/style.scss";
-import "./mobileNav.js";
+import "./mobileNav";
+import "./slider";
