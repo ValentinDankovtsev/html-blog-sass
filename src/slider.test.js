@@ -1,35 +1,45 @@
-import { showSlides } from "./slider";
+import { Slider } from "./slider";
 
-describe("showSlides test", () => {
-  global.window.document.body.innerHTML = `<div class="slider">
-    <div class="slider-wrapper">
-      <div class="slider-counter">
-        <div class="slider-prev">
-          <img src="dest/left.svg" alt="prev" />
-        </div>
-        <div class="slider-next">
-          <img src="dest/right.svg" alt="next" />
-        </div>
+describe("Should slider work", () => {
+  window.document.body.innerHTML = `
+      <div class="slider-prev">
       </div>
-      <div class="slide">
-        <img src="/dest/4gWEQhzuTyJmx.png" alt="img1" />
+      <div class="slider-next">
       </div>
-      <div class="slide">
-        <img src="dest/KZYo98Ve7q.png" alt="img2" />
-      </div>
-      <div class="slide">
-        <img src="dest/yJppRDr8d8spt4PC.png" alt="img3" />
-      </div>
-      <div class="slide">
-        <img src="dest/ZWR9xUOvliy3F.png" alt="img4" />
-      </div>
-    </div>
-  </div>`;
-  const prev = document.querySelector(".slider-prev");
-  it("should showSlides", () => {
-    const event = new window.Event("click", { bubbles: true });
-    prev.dispatchEvent(event);
-    showSlides();
-    expect(showSlides).toBe("function");
+      <li class="slide">
+      <img src="" class="shown" alt="img1" />
+      </li>
+      <li class="slide">
+      <img src="" class="shown" alt="img2 />
+      </li>
+      <li class="slide">
+      <img src="" class="shown" alt="img3 />
+      </li>
+      <li class="slide">
+      <img src="" class="shown" alt="img4 />
+      </li>
+    `;
+
+  const prev = window.document.body.querySelector(".slider-prev");
+  const next = window.document.body.querySelector(".slider-next");
+  it("We can check work 'prev' and 'next':", () => {
+    const slider = new Slider();
+    expect(slider.currentImageIndex).toBe(0);
+    next.click();
+    expect(slider.currentImageIndex).toBe(1);
+    prev.click();
+    expect(slider.currentImageIndex).toBe(0);
+  });
+  it("We can check  showSlides should display block:", () => {
+    const currentImageIndex = 0;
+    const slider = new Slider();
+    slider.showSlides();
+    expect(slider.slides[currentImageIndex].style.display).toBe("block");
+  });
+  it("We can check work showSlides should display none:", () => {
+    const currentImageIndex = 1;
+    const slider = new Slider();
+    slider.showSlides();
+    expect(slider.slides[currentImageIndex].style.display).toBe("none");
   });
 });

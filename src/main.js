@@ -1,3 +1,6 @@
 import "./styles/style.scss";
 import "./mobileNav";
-import "./slider";
+import { Slider } from "./slider";
+
+export const slider = new Slider();
+slider.showSlides();
