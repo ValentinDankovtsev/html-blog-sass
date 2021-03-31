@@ -22,8 +22,16 @@ describe("Should slider work", () => {
 
   const prev = window.document.body.querySelector(".slider-prev");
   const next = window.document.body.querySelector(".slider-next");
+
+  it("We can check if the Slider is the class constructor:", () => {
+    const slider = new Slider(".slide");
+    expect(slider).toBeInstanceOf(Slider);
+    expect(slider).toBeTruthy();
+    expect(typeof Slider).toBe("function");
+    expect(typeof slider).toBe("object");
+  });
   it("We can check work 'prev' and 'next':", () => {
-    const slider = new Slider();
+    const slider = new Slider(".slide");
     expect(slider.currentImageIndex).toBe(0);
     next.click();
     expect(slider.currentImageIndex).toBe(1);
@@ -32,13 +40,13 @@ describe("Should slider work", () => {
   });
   it("We can check  showSlides should display block:", () => {
     const currentImageIndex = 0;
-    const slider = new Slider();
+    const slider = new Slider(".slide");
     slider.showSlides();
     expect(slider.slides[currentImageIndex].style.display).toBe("block");
   });
   it("We can check work showSlides should display none:", () => {
     const currentImageIndex = 1;
-    const slider = new Slider();
+    const slider = new Slider(".slide");
     slider.showSlides();
     expect(slider.slides[currentImageIndex].style.display).toBe("none");
   });

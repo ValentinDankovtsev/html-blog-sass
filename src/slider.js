@@ -1,6 +1,6 @@
 export class Slider {
-  constructor() {
-    this.slides = document.querySelectorAll(".slide");
+  constructor(selector) {
+    this.slides = document.querySelectorAll(selector);
     this.next = document.querySelector(".slider-next");
     this.currentImageIndex = 0;
     this.prev = document.querySelector(".slider-prev");
