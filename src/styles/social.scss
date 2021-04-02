@@ -1,0 +1,12 @@
+.social {
+  display: flex;
+  margin-left: 3rem;
+  @include breakpoint($tablet-bp) {
+    display: none;
+  }
+}
+
+.social__item {
+  list-style-type: none;
+  margin: 0 0.75rem;
+}

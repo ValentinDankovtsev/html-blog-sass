@@ -1,0 +1,60 @@
+.add-post {
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+  background-color: $secondary;
+  box-shadow: 0 15px 25px rgba($black, 0.45);
+  border-radius: 5px;
+  @include breakpoint($mobile-bp) {
+    padding: 1.5rem;
+  }
+}
+
+.add-post__form {
+  display: flex;
+  align-items: center;
+}
+
+.add-post__textarea {
+  display: block;
+  flex-grow: 1;
+  width: 80%;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 1.5rem;
+  color: $white;
+  font-family: inherit;
+  height: 26px;
+  overflow: hidden;
+}
+.add-post__form-actions {
+  width: 12rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin send-post-mix {
+  display: block;
+  width: 4.4rem;
+  height: 4.4rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  input {
+    opacity: 0;
+  }
+}
+
+.add-post__file {
+  background-color: #ebebeb;
+  @include send-post-mix;
+}
+
+.add-post__send {
+  background-color: $secondary;
+  margin-left: 1rem;
+  width: 4rem;
+  @include send-post-mix;
+}
